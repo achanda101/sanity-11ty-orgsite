@@ -21,13 +21,32 @@ export default {
       validation: Rule => Rule.min(1).unique()
     }
   ],
+  orderings: [
+    {
+      name: 'menuCategoryByColour',
+      title: 'Group by Colour of Menu Category',
+      by: [
+        {
+          field: 'menuColour',
+          direction: 'asc'
+        },
+        {
+          field: 'menuIndex',
+          direction: 'asc'
+        }
+      ]
+    }
+  ],
   preview: {
     select: {
-      title: 'menuCategoryTitle'
+      title: 'menuCategoryTitle',
+      colour: 'menuColour',
+      index: 'menuIndex'
     },
-    prepare({ title = 'No title' }) {
+    prepare({ title = 'No title', colour, index }) {
       return {
         title,
+        subtitle: `Index: ${index} ${colour}`,
         media: <span style={{ fontSize: '1.5rem' }}>{'📁'}</span>
       }
     }

@@ -43,7 +43,6 @@ export default createSchema({
     authorReference,
     pageReference,
     linkReference,
-    menuCategoryReference,
     bodyPortableText,
     bioPortableText,
     excerptPortableText

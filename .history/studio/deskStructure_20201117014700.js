@@ -10,7 +10,7 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
-        .title('Site Configuration')
+        .title('Settings')
         .icon(MdSettings)
         .child(
           S.editor()

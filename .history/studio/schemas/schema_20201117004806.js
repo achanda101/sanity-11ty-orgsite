@@ -21,7 +21,6 @@ import a11yImage from './objects/a11yImage'
 import authorReference from './objects/authorReference'
 import pageReference from './objects/pageReference'
 import linkReference from './objects/linkReference'
-import menuCategoryReference from './objects/menuCategoryReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,7 +42,6 @@ export default createSchema({
     authorReference,
     pageReference,
     linkReference,
-    menuCategoryReference,
     bodyPortableText,
     bioPortableText,
     excerptPortableText

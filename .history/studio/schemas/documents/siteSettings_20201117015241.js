@@ -19,7 +19,7 @@ export default {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
-      description: 'Add keywords that describe your website.',
+      description: 'Add keywords that describes your website.',
       of: [{ type: 'string' }],
       options: {
         layout: 'tags'

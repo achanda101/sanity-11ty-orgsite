@@ -12,7 +12,7 @@ import menu from './documents/menu'
 import post from './documents/post'
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
-import footerSettings from './documents/footerSettings'
+import footer from './documents/footer'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -34,7 +34,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     siteSettings,
-    footerSettings,
+    footer,
     post,
     page,
     category,

@@ -3,7 +3,7 @@ import { MdSettings } from 'react-icons/md'
 import { FiLayers, FiFile, FiMenu } from 'react-icons/fi'
 
 const hiddenDocTypes = listItem =>
-  !['menuCategory', 'menu', 'page', 'siteSettings', 'footerSettings'].includes(listItem.getId())
+  !['menuCategory', 'menu', 'page', 'siteSettings', 'footer'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -14,7 +14,7 @@ export default () =>
         .icon(MdSettings)
         .child(
           S.editor()
-            .title('Site Configuration')
+            .id('siteSettings')
             .schemaType('siteSettings')
             .documentId('siteSettings')
         ),
@@ -24,10 +24,9 @@ export default () =>
         .child(
           S.editor()
             .title('Footer Settings')
-            .schemaType('footerSettings')
-            .documentId('footerSettings')
+            .schemaType('footer')
+            .documentId('footer')
         ),
-      S.divider(),
       S.listItem()
         .title('Pages')
         .icon(FiFile)

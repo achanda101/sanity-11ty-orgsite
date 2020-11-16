@@ -3,31 +3,21 @@ import { MdSettings } from 'react-icons/md'
 import { FiLayers, FiFile, FiMenu } from 'react-icons/fi'
 
 const hiddenDocTypes = listItem =>
-  !['menuCategory', 'menu', 'page', 'siteSettings', 'footerSettings'].includes(listItem.getId())
+  !['menuCategory', 'menu', 'page', 'siteSettings', 'footer'].includes(listItem.getId())
 
 export default () =>
   S.list()
-    .title('Sanity Eleventy Party')
+    .title('Content')
     .items([
       S.listItem()
         .title('Site Configuration')
         .icon(MdSettings)
         .child(
           S.editor()
-            .title('Site Configuration')
+            .id('siteSettings')
             .schemaType('siteSettings')
             .documentId('siteSettings')
         ),
-      S.listItem()
-        .title('Footer Settings')
-        .icon(MdSettings)
-        .child(
-          S.editor()
-            .title('Footer Settings')
-            .schemaType('footerSettings')
-            .documentId('footerSettings')
-        ),
-      S.divider(),
       S.listItem()
         .title('Pages')
         .icon(FiFile)
@@ -43,6 +33,15 @@ export default () =>
         .icon(FiMenu)
         .schemaType('menu')
         .child(S.documentTypeList('menu').title('Menus')),
+      S.listItem()
+        .title('Footer Configuration')
+        .icon(MdSettings)
+        .child(
+          S.editor()
+            .id('footer')
+            .schemaType('footer')
+            .documentId('footer')
+        ),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

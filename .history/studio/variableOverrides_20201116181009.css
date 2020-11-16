@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+:root {
+  --brand-primary: #D21F26;
+  --brand-secondary: #DB3D45;
+  --font-family-base: 'EB Garamond', serif;
+}

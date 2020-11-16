@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { MdSettings } from 'react-icons/md'
-import { FiLayers, FiFile } from 'react-icons/fi'
+import { FiLayers } from 'react-icons/fi'
 
 const hiddenDocTypes = listItem =>
   !['menuCategory', 'page', 'siteSettings'].includes(listItem.getId())
@@ -20,7 +20,6 @@ export default () =>
         ),
       S.listItem()
         .title('Pages')
-        .icon(FiFile)
         .schemaType('page')
         .child(S.documentTypeList('page').title('Pages')),
       S.listItem()

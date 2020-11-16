@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default {
   name: 'menuCategory',
   type: 'document',
@@ -19,7 +17,10 @@ export default {
       options: {
         list: [{ title: 'Red Menu', value: 'RED' }, { title: 'White Menu', value: 'WHITE' }]
       },
-      validation: Rule => Rule.required().max(1)
+      validation: Rule =>
+        Rule.min(1)
+          .max(1)
+          .required()
     },
     {
       name: 'menuIndex',
@@ -35,7 +36,7 @@ export default {
       description:
         'Add pages that will appear under this menu catergory. If there are no pages under this category, you can add an external link.',
       of: [{ type: 'pageReference' }, { type: 'linkReference' }],
-      validation: Rule => Rule.min(1).unique()
+      validation: Rule => Rule.min(1)
     }
   ],
   orderings: [
@@ -50,6 +51,10 @@ export default {
         {
           field: 'menuIndex',
           direction: 'asc'
+        },
+        {
+          field: 'menuCategoryTitle',
+          direction: 'asc'
         }
       ]
     }
@@ -63,8 +68,7 @@ export default {
     prepare({ title = 'No title', colour, index }) {
       return {
         title,
-        subtitle: `Index: ${index} ${colour}`,
-        media: <span style={{ fontSize: '1.5rem' }}>{'📁'}</span>
+        subtitle: `Index: ${index} ${colour}`
       }
     }
   }

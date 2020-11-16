@@ -35,7 +35,7 @@ export default {
       description:
         'Add pages that will appear under this menu catergory. If there are no pages under this category, you can add an external link.',
       of: [{ type: 'pageReference' }, { type: 'linkReference' }],
-      validation: Rule => Rule.min(1).unique()
+      validation: Rule => Rule.min(1)
     }
   ],
   orderings: [
@@ -49,6 +49,10 @@ export default {
         },
         {
           field: 'menuIndex',
+          direction: 'asc'
+        },
+        {
+          field: 'menuCategoryTitle',
           direction: 'asc'
         }
       ]
@@ -64,7 +68,7 @@ export default {
       return {
         title,
         subtitle: `Index: ${index} ${colour}`,
-        media: <span style={{ fontSize: '1.5rem' }}>{'📁'}</span>
+        media: <span style={{ fontSize: '1.5rem' }}>{'🗂️'}</span>
       }
     }
   }

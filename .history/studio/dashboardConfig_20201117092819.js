@@ -1,6 +1,13 @@
 export default {
   widgets: [
     {
+      name: 'sanity-tutorials',
+      options: {
+        templateRepoId: 'sanity-io/sanity-template-eleventy-blog'
+      }
+    },
+    { name: 'structure-menu' },
+    {
       name: 'project-info',
       options: {
         __experimental_before: [
@@ -18,7 +25,7 @@ export default {
                 },
                 {
                   buildHookId: '5fb2309186dab35fcbb8c148',
-                  title: 'Production Website',
+                  title: 'Blog Website',
                   name: 'sanity-11-ty-orgsite',
                   apiId: '1f17a95c-28b2-4fa2-a4b1-837ce3d4ff7a'
                 }

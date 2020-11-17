@@ -1,6 +1,13 @@
 export default {
   widgets: [
     {
+      name: 'sanity-tutorials',
+      options: {
+        templateRepoId: 'sanity-io/sanity-template-eleventy-blog'
+      }
+    },
+    {name: 'structure-menu'},
+    {
       name: 'project-info',
       options: {
         __experimental_before: [
@@ -18,7 +25,7 @@ export default {
                 },
                 {
                   buildHookId: '5fb2309186dab35fcbb8c148',
-                  title: 'Production Website',
+                  title: 'Blog Website',
                   name: 'sanity-11-ty-orgsite',
                   apiId: '1f17a95c-28b2-4fa2-a4b1-837ce3d4ff7a'
                 }
@@ -32,15 +39,15 @@ export default {
             value: 'https://github.com/achanda101/sanity-11ty-orgsite',
             category: 'Code'
           },
-          { title: 'Frontend', value: 'https://sanity-11-ty-orgsite.netlify.app', category: 'apps' }
+          {title: 'Frontend', value: 'https://sanity-11-ty-orgsite.netlify.app', category: 'apps'}
         ]
       }
     },
-    { name: 'project-users', layout: { height: 'auto' } },
+    {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: { title: 'Recent pages', order: '_createdAt desc', types: ['page'] },
-      layout: { width: 'medium' }
+      options: {title: 'Recent blog posts', order: '_createdAt desc', types: ['post']},
+      layout: {width: 'medium'}
     }
   ]
 }

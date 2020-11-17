@@ -14,7 +14,7 @@ export default () =>
         .icon(MdSettings)
         .child(
           S.editor()
-            .id('siteConfig')
+            .id('siteConfig'),
             .title('Site Configuration')
             .schemaType('siteSettings')
             .documentId('siteSettings')
@@ -24,7 +24,7 @@ export default () =>
         .icon(MdSettings)
         .child(
           S.editor()
-            .id('footerSettings')
+            .id('footerSettings'),
             .title('Footer Settings')
             .schemaType('footerSettings')
             .documentId('footerSettings')

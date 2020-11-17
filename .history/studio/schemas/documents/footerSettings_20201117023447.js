@@ -2,6 +2,7 @@ export default {
   name: 'footerSettings',
   type: 'document',
   title: 'Footer Settings',
+  __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
       name: 'tagline',
@@ -50,12 +51,12 @@ export default {
     },
     {
       name: 'copyright',
-      type: 'string',
+      type: 'text',
       title: 'Copyright'
     },
     {
       name: 'disclaimer',
-      type: 'string',
+      type: 'text',
       title: 'Disclaimer'
     }
   ]

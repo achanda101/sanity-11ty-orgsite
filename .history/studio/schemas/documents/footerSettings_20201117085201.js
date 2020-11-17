@@ -50,12 +50,12 @@ export default {
     },
     {
       name: 'copyright',
-      type: 'string',
+      type: 'text',
       title: 'Copyright'
     },
     {
       name: 'disclaimer',
-      type: 'string',
+      type: 'text',
       title: 'Disclaimer'
     }
   ]

@@ -10,16 +10,6 @@ export default () =>
     .title('Sanity Eleventy Party')
     .items([
       S.listItem()
-        .title('Site Configuration')
-        .icon(MdSettings)
-        .child(
-          S.editor()
-            .id('siteConfig')
-            .title('Site Configuration')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        ),
-      S.listItem()
         .title('Footer Settings')
         .icon(MdSettings)
         .child(

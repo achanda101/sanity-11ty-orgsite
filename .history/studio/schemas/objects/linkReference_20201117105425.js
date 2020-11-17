@@ -1,5 +1,4 @@
 import React from 'react'
-import { BiLink } from 'react-icons/bi'
 
 export default {
   name: 'linkReference',
@@ -10,18 +9,17 @@ export default {
       title: 'URL Title',
       name: 'urlTitle',
       type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      title: 'URL',
-      name: 'href',
-      type: 'url',
       validation: Rule =>
         Rule.required().uri({
           allowRelative: false, // Allow relative links
           relativeOnly: false, // Force only relative links
           scheme: ['https', 'http', 'mailto'] // Default is ["https", "http"]
         })
+    },
+    {
+      title: 'URL',
+      name: 'href',
+      type: 'url'
     }
   ],
   preview: {
@@ -31,11 +29,7 @@ export default {
     prepare({ title }) {
       return {
         title: title,
-        media: (
-          <span style={{ fontSize: '1.5rem' }}>
-            <BiLink />
-          </span>
-        )
+        media: <span style={{ fontSize: '1.5rem' }}>{'🔗'}</span>
       }
     }
   }

@@ -10,18 +10,17 @@ export default {
       title: 'URL Title',
       name: 'urlTitle',
       type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      title: 'URL',
-      name: 'href',
-      type: 'url',
       validation: Rule =>
         Rule.required().uri({
           allowRelative: false, // Allow relative links
           relativeOnly: false, // Force only relative links
           scheme: ['https', 'http', 'mailto'] // Default is ["https", "http"]
         })
+    },
+    {
+      title: 'URL',
+      name: 'href',
+      type: 'url'
     }
   ],
   preview: {

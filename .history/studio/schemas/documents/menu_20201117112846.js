@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsCardList } from 'react-icons/bs'
+import { BiCollection } from 'react-icons/bi'
 
 export default {
   name: 'menu',
@@ -33,8 +33,8 @@ export default {
       return {
         title: title.length < 1 ? 'No Title' : title[0] + ' Menu',
         media: (
-          <span style={{ fontSize: '1.5rem' }}>
-            <BsCardList />
+          <span style={{ fontSize: '1.5rem', borderColor: '#f00' }}>
+            <BiCollection />
           </span>
         )
       }

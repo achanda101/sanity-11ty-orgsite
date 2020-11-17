@@ -57,6 +57,11 @@ export default {
       ]
     },
     {
+      name: 'copyright',
+      type: 'string',
+      title: 'Copyright'
+    },
+    {
       name: 'disclaimer',
       type: 'string',
       title: 'Disclaimer'

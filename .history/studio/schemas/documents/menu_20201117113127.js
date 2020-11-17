@@ -33,7 +33,7 @@ export default {
       return {
         title: title.length < 1 ? 'No Title' : title[0] + ' Menu',
         media: (
-          <span style={{ fontSize: '1.5rem' }}>
+          <span style={{ fontSize: '1rem' }}>
             <BsCardList />
           </span>
         )

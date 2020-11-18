@@ -15,9 +15,8 @@ export default {
     {
       name: 'pageList',
       type: 'array',
-      title: 'List of Pages',
-      description:
-        'Add pages that will appear under this menu catergory. If there are no pages under this category, you can add an external link.',
+      title: 'List of Pages/External Links',
+      description: 'Add pages or external links that will appear under this menu catergory.',
       of: [{ type: 'pageReference' }, { type: 'linkReference' }],
       validation: Rule => Rule.min(1).unique()
     }

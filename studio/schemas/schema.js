@@ -13,6 +13,7 @@ import post from './documents/post'
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
 import footerSettings from './documents/footerSettings'
+import socialMediaMenubar from './documents/socialMediaMenubar'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -35,6 +36,7 @@ export default createSchema({
     // in the studio.
     siteSettings,
     footerSettings,
+    socialMediaMenubar,
     post,
     page,
     category,

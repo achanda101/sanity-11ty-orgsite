@@ -6,3 +6,9 @@
 
 # lerna files
 /lerna-debug.log
+
+# environment variables
+/web/.env.development
+
+# History files
+.history

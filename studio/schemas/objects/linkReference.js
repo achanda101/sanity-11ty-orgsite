@@ -16,26 +16,36 @@ export default {
       title: 'URL',
       name: 'href',
       type: 'url',
+      description: 'URL needs to start with http:// or https://',
       validation: Rule =>
         Rule.required().uri({
           allowRelative: false, // Allow relative links
           relativeOnly: false, // Force only relative links
-          scheme: ['https', 'http', 'mailto'] // Default is ["https", "http"]
+          scheme: ['https', 'http'] // Default is ["https", "http"]
         })
+    },
+    {
+      title: 'Icon Name (optional)',
+      name: 'iconName',
+      type: 'string',
+      description:
+        'Visit https://react-icons.github.io/search to search for a suitable icon and copy & paste the name of the icon here'
     }
   ],
   preview: {
     select: {
-      title: 'urlTitle'
+      title: 'urlTitle',
+      iconName: 'iconName'
     },
-    prepare({ title }) {
+    prepare({ title, iconName = '' }) {
       return {
         title: title,
         media: (
           <span style={{ fontSize: '1.5rem' }}>
             <BiLink />
           </span>
-        )
+        ),
+        subtitle: iconName
       }
     }
   }

@@ -12,13 +12,14 @@ export default {
               sites: [
                 {
                   buildHookId: '5fb230917cbead68aa9d2782',
-                  title: 'Sanity Studio',
+                  title:
+                    'Sanity Studio (to be on the safe side, only admins should access this deploy)',
                   name: 'sanity-11-ty-orgsite-studio',
                   apiId: '91eb4eeb-7692-4479-ad9c-4703f9adde3f'
                 },
                 {
                   buildHookId: '5fb2309186dab35fcbb8c148',
-                  title: 'Production Website',
+                  title: 'Production Website (Click on deploy after making changes to the content)',
                   name: 'sanity-11-ty-orgsite',
                   apiId: '1f17a95c-28b2-4fa2-a4b1-837ce3d4ff7a'
                 }

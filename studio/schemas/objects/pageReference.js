@@ -16,7 +16,16 @@ export default {
   preview: {
     select: {
       title: 'page.title',
-      media: 'page.heroImage.asset'
+      media: 'page.heroImage.asset',
+      childList: 'page.childPages'
+    },
+    prepare({ title = 'No title', media, childList = [] }) {
+      const children = childList.length > 0 ? 'Has Child Pages' : ''
+      return {
+        title,
+        media,
+        subtitle: children
+      }
     }
   }
 }

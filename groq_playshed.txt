@@ -1,0 +1,24 @@
+// Iterating through all the pages with non-zero child pages,
+// getting their title, slug and the title and slug of their child pages
+
+*[_type=='page' && count(childPages) > 0]{ title, slug{current}, childPages[]{_type=='pageReference' => {"title": @.page->title, "slug": @.page->slug.current}}}
+
+RESULT:
+[
+  {
+    "title": "Vardan",
+    "slug": {
+      "current": "vardan"
+    },
+    "childPages": [
+      {
+        "title": "Friends of Nrityagram",
+        "slug": "friends-of-nrityagram"
+      },
+      {
+        "title": "Nrityagram Angels",
+        "slug": "nrityagram-angels"
+      }
+    ]
+  }
+]

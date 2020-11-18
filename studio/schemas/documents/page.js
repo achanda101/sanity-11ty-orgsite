@@ -4,6 +4,10 @@ export default {
   name: 'page',
   type: 'document',
   title: 'Page',
+  initialValue: {
+    hidePage: false,
+    childPages: []
+  },
   fields: [
     {
       name: 'title',
@@ -24,19 +28,12 @@ export default {
     {
       name: 'publishedAt',
       type: 'datetime',
-      title: 'Published at',
-      description: 'This can be used to schedule post for publishing'
+      title: 'Published at'
     },
     {
-      name: 'heroImage',
-      type: 'a11yImage',
-      title: 'Hero image'
-    },
-    {
-      name: 'heroText',
-      type: 'string',
-      title: 'Hero Text',
-      description: 'Hero text will be overlayed on top of the Hero image'
+      name: 'hidePage',
+      type: 'boolean',
+      title: 'Hide Page'
     },
     {
       name: 'excerpt',
@@ -46,30 +43,36 @@ export default {
         'This ends up on summary pages, on Google, when people share your post in social media'
     },
     {
-      name: 'childPages',
-      type: 'array',
-      title: 'Child Pages',
-      description:
-        'Choose child pages which will appear under this page in the menu. Leave blank if are no child pages.',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'page'
-          }
-        }
-      ]
+      name: 'heroImage',
+      type: 'a11yImage',
+      title: 'Hero image',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'heroText',
+      type: 'string',
+      title: 'Hero Text',
+      description: 'Hero text will be overlayed on top of the Hero image',
+      validation: Rule => Rule.required()
     },
     {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body'
+    },
+    {
+      name: 'childPages',
+      type: 'array',
+      title: 'Child Pages',
+      description:
+        'Choose child pages which will appear under this page in the menu. Leave blank if there are no child pages.',
+      of: [{ type: 'pageReference' }]
     }
   ],
   orderings: [
     {
       name: 'titleAsc',
-      title: 'Title alphabetical',
+      title: 'Title',
       by: [
         {
           field: 'title',
@@ -111,16 +114,18 @@ export default {
       title: 'title',
       publishedAt: 'publishedAt',
       slug: 'slug',
-      media: 'heroImage'
+      media: 'heroImage',
+      childList: 'childPages'
     },
-    prepare({ title = 'No title', publishedAt, slug = {}, media }) {
-      const dateSegment = format(publishedAt, 'YYYY/MM/DD')
+    prepare({ title = 'No title', publishedAt, slug = {}, media, childList = [] }) {
+      const dateSegment = format(publishedAt, 'DD/MM/YYYY')
       const path = `/${slug.current}/`
-      const publishDate = publishedAt ? ` published on ${dateSegment}` : ' Missing publishing date'
+      const publishDate = publishedAt ? ` :: ${dateSegment}` : ' Missing publishing date'
+      const children = childList.length > 0 ? ' :: Has Child Pages' : ''
       return {
         title,
         media,
-        subtitle: path + publishDate
+        subtitle: path + publishDate + children
       }
     }
   }
